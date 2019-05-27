@@ -29,16 +29,18 @@ Getting Started
 5. Run tests and verify everything has setup correctly.
    
        make test
-6. Run the development server
-   
-       make dev.up
-7. Generate books data in local database.
+
+6. Generate books data in local database.
 
        make generate_books
 
+7. Run the development server
+   
+       make dev.up
+
 | Service             | URL                                       |
 | -------------       | -------------                             |
-| External Books API  | http://localhost:8080/api/external-api/   |
+| External Books API  | http://localhost:8080/api/external-books  |
 | Books API           | http://localhost:8080/api/v1/books/       |
 | API Admin           | http://localhost:8080/admin               |
 

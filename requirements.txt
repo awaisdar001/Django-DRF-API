@@ -1,7 +1,8 @@
 Django==1.11.20
 djangorestframework==3.9.2
-virtualenv==16.2.0
-python-dateutil==2.8.0
-factory_boy==2.12.0
-mock
 django-filter~=1.1
+factory_boy==2.12.0
+python-dateutil==2.8.0
+requests==2.22.0
+mock
+virtualenv==16.2.0
