@@ -22,6 +22,7 @@ Getting Started
        git clone https://github.com/awaisdar001/Django-DRF-API.git
 
 2. Create a [virtualenv](https://virtualenv.pypa.io/en/latest/installation/) and activate it.
+
        virtualenv venv
        source venv/bin/activate
 
