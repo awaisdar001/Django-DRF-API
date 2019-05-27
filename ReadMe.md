@@ -32,6 +32,9 @@ Getting Started
 6. Run the development server
    
        make dev.up
+7. Generate books data in local database.
+
+       make generate_books
 
 | Service             | URL                                       |
 | -------------       | -------------                             |

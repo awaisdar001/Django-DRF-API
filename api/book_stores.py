@@ -44,20 +44,29 @@ class IceAndFireStore(BookStoreBase):
         api_url = self.parse_query_params(name)
         try:
             response = requests.get(api_url)
-            return self.transform_response(response)
+            return self.transform_success_response(response)
         except ConnectionError as ex:
             return self.return_error_response(ex)
 
-    def transform_response(self, response):
-        """Transforms the response into required format"""
+    def transform_success_response(self, response):
+        """Transforms the response into required format."""
         response_data = response.json()
         serialized_data = []
         for book_data in response_data:
             serializer = self.serializer(book_data)
             serialized_data.append(serializer.data)
-
-        response_status = get_response_status_info(response.status_code)
         data = {'data': serialized_data}
+        return self.add_response_status_info(data, response.status_code)
+
+    def add_response_status_info(self, data, response_status_code):
+        """
+        Adds response status information with data
+
+        Arguments:
+            data (dict) : data should be a dict object
+            response_status_code (int) : response code from the sever.
+        """
+        response_status = get_response_status_info(response_status_code)
         data.update(response_status)
         return data
 

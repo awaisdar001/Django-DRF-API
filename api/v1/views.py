@@ -55,43 +55,47 @@ class BookViewSet(ModelViewSet):
         return Response(data=response_data)
 
     @staticmethod
-    def transform_response(data, status_code):
+    def transform_data(data, status_code):
+        """Transform data and add response status information """
         response_status = get_response_status_info(status_code)
         data.update(response_status)
 
     def transform_response_for_list(self, response):
-        response_data = {
-            'data': response.data
-        }
-        self.transform_response(response_data, response.status_code)
+        """Transform response for book list endpoint.' """
+        response_data = {'data': response.data}
+        self.transform_data(response_data, response.status_code)
         return response_data
 
     def transform_response_for_retrieve(self, response):
+        """Transform response for book retrieve endpoint.' """
         response_data = {
             'data': response.data
         }
-        self.transform_response(response_data, response.status_code)
+        self.transform_data(response_data, response.status_code)
         return response_data
 
     def transform_data_for_create(self, response):
+        """Transform response for book create endpoint.' """
         response_data = {
             'data': {'book': response.data}
         }
-        self.transform_response(response_data, response.status_code)
+        self.transform_data(response_data, response.status_code)
         return response_data
 
     def transform_data_for_update(self, response, book):
+        """Transform response for book update endpoint.' """
         response_data = {
             'data': response.data,
             'message': 'The book {0} was updated successfully'.format(book.name),
         }
-        self.transform_response(response_data, response.status_code)
+        self.transform_data(response_data, response.status_code)
         return response_data
 
     def transform_response_for_destroy(self, response, book):
+        """Transform response for destroy endpoint.' """
         response_data = {
             'data': [],
             'message': 'The book {0} was deleted successfully'.format(book.name)
         }
-        self.transform_response(response_data, response.status_code)
+        self.transform_data(response_data, response.status_code)
         return response_data

@@ -26,8 +26,10 @@ class BooksListTests(APITestCase):
 
     @mock.patch('requests.get', return_value=MockResponse)
     def test_api_response_transformation(self, __):
-        """Tests that the data is correctly transformed into the required
-        format."""
+        """
+        Tests that the data is correctly transformed into the required
+        format.
+        """
         response = self.client.get(self.books_fetch_url)
         response_data = response.json()
         self.assertGreaterEqual(len(response_data['data']), 1)
@@ -63,10 +65,11 @@ class BooksListTests(APITestCase):
     def test_call_with_querystring(self, mocked_api_call):
         """
         Test api call contains querystring when user provides the filter
-        criteria in querystring
+        criteria in querystring.
         """
         filter_name = 'Foo'
         __ = self.client.get(self.books_fetch_url, {'name': filter_name})
         self.assertEqual(
             mocked_api_call.call_args[0][0],
-            'https://www.anapioficeandfire.com/api/books?name={}'.format(filter_name))
+            'https://www.anapioficeandfire.com/api/books?name={}'.format(filter_name)
+        )

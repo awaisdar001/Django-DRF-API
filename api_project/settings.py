@@ -110,6 +110,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 ACTIVE_BOOK_STORE = 'api.book_stores.IceAndFireStore'
+
 REST_FRAMEWORK = {
     "DATE_INPUT_FORMATS": ["%Y-%m-%d"],
     'DEFAULT_FILTER_BACKENDS': (
