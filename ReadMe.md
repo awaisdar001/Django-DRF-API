@@ -14,7 +14,7 @@ Getting Started
 ---------------
 1. Clone the Reop in your local machine.
 
-       make dev.clone
+       git clone https://github.com/awaisdar001/Django-DRF-API.git
 
 2. Install the requirements inside of a `Python virtualenv`_.
    

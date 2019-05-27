@@ -19,7 +19,4 @@ generate_books:
 	python manage.py generate_books --settings=$(PROJECT_SETTINGS)
 test:
 	python manage.py test --settings=$(PROJECT_SETTINGS)
-dev.clone:
-	git clone --single-branch -b master https://github.com/awaisdar001/Django-DRF-API.git
-
 	
