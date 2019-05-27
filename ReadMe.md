@@ -1,10 +1,15 @@
-Django RestFramework API
+Django Rest Framework API
 ================================
 This is Python REST API that calls an external API service to get information about books. Additionally, it implements a simple CRUD (Create, Read, Update, Delete) API with a local sql database.
 
+Compatibility
+-------------
+This project is developed and tested with `python2.7`
+
 Prerequisites
 -------------
-In order to setup this project, make sure you have python's `pip` peckage installed on your system.
+In order to setup this project, make sure you have python's `pip` package installed on your system.
+
 
 FYI
 ---
@@ -16,25 +21,29 @@ Getting Started
 
        git clone https://github.com/awaisdar001/Django-DRF-API.git
 
-2. Install the requirements inside of a `Python virtualenv`_.
+2. Create a [virtualenv](https://virtualenv.pypa.io/en/latest/installation/) and activate it.
+       virtualenv venv
+       source venv/bin/activate
+
+3. Install the requirements inside of a `Python virtualenv`.
    
        make requirements
-3. Run migrations and setup the database locally. 
+4. Run migrations and setup the database locally.
    
        make update_db
-4. [Optional] Create a superuser to get admin access to add/update data manually
+5. [Optional] Create a superuser to get admin access to add/update data manually
    
        make create_su
 
-5. Run tests and verify everything has setup correctly.
+6. Run tests and verify everything has setup correctly.
    
        make test
 
-6. Generate books data in local database.
+7. Generate books data in local database.
 
        make generate_books
 
-7. Run the development server
+8. Run the development server
    
        make dev.up
 
